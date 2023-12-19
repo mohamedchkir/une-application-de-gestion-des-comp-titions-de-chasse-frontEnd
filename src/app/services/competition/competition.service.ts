@@ -14,8 +14,8 @@ export class CompetitionService {
 
   constructor(private _http: HttpClient) { }
 
-  getCompetitions(): Observable<CompetitionElement[]> {
-    return this._http.get<CompetitionElement[]>(this.url);
+  getCompetitions(): Observable<PageableResponse> {
+    return this._http.get<PageableResponse>(this.url + "?page=0&size=50");
   }
 
   getCompetition(code: string): Observable<CompetitionElement> {

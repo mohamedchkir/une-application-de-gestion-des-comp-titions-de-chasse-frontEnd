@@ -31,7 +31,7 @@ export class BottomSheetRegisterComponent {
   ngOnInit(): void {
     this._competitionService.getCompetitions().subscribe(
       data => {
-        this.competitions = data.filter(value => value.status == "UPCOMING");
+        this.competitions = data.content.filter(value => value.status == "UPCOMING");
         this.filteredCompetitions = this.competitionControl.valueChanges.pipe(
           startWith(''),
           map(value => {
