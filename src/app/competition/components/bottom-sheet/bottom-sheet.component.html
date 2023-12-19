@@ -1,12 +1,5 @@
 <form id="form" [formGroup]="competitionForm" (ngSubmit)="saveCompetition()">
   <mat-form-field>
-    <mat-label>Code</mat-label>
-    <input matInput placeholder="ex: ims-15-12-23" formControlName="code">
-    <div *ngIf="errorResponse?.errors?.['code']">
-      <mat-error>{{ errorResponse?.errors?.['code'] }}</mat-error>
-    </div>
-  </mat-form-field>
-  <mat-form-field>
     <mat-label>Date</mat-label>
     <input type="date" matInput formControlName="date">
     <div *ngIf="errorResponse?.errors?.['date']">

@@ -18,7 +18,6 @@ export class BottomSheetComponent implements OnInit {
 
   ngOnInit(): void {
     this.competitionForm = this._fb.group({
-      code: [''],
       date: [''],
       startTime: [''],
       endTime: [''],
