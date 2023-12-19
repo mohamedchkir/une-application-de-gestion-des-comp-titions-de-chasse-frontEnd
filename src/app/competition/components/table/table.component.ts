@@ -31,7 +31,7 @@ export class TableComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this._sub = this._competitionService.getCompetitions().subscribe(
       data => {
-        this.competitions = data.content;
+        this.competitions = data;
         this.dataSource = new MatTableDataSource<CompetitionElement>(this.competitions);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
