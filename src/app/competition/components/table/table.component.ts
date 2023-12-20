@@ -17,7 +17,7 @@ import {BottomSheetComponent} from "../bottom-sheet/bottom-sheet.component";
 export class TableComponent implements OnInit, OnDestroy {
   private _sub!: Subscription;
   statusFilter: string = "";
-  displayedColumns: string[] = ["code", "date", "start time", "end time", "location", "amount", "status"];
+  displayedColumns: string[] = ["code", "date", "start time", "end time", "location", "amount", "status","Number Of Participants"];
   competitions: CompetitionElement[] = [];
   dataSource = new MatTableDataSource<CompetitionElement>(this.competitions);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
