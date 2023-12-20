@@ -10,12 +10,12 @@ import {RegisterElement} from "../../member/models/register-element";
   providedIn: 'root'
 })
 export class CompetitionService {
-  private url: string = "http://localhost:8888/api/competition";
+  private url: string = "http://localhost:8080/api/v1/competitions";
 
   constructor(private _http: HttpClient) { }
 
-  getCompetitions(): Observable<PageableResponse> {
-    return this._http.get<PageableResponse>(this.url + "?page=0&size=50");
+  getCompetitions(): Observable<CompetitionElement[]> {
+    return this._http.get<CompetitionElement[]>(this.url);
   }
 
   getCompetition(code: string): Observable<CompetitionElement> {

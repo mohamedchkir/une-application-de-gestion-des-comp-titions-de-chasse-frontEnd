@@ -28,7 +28,7 @@ export class TableComponent implements OnInit, OnDestroy{
   ngOnInit(): void {
     this._sub = this._competitionService.getCompetitions().subscribe(
       data => {
-        this.competitions = data.content;
+        this.competitions = data;
         this.dataSource = new MatTableDataSource<CompetitionElement>(this.competitions.filter(value => value.status == "COMPLETED"));
         this.currentCompetition = this.competitions.find(value => value.status == "ONGOING");
         this.nextCompetition = this.competitions.filter(competition => competition.status === 'UPCOMING').sort((a, b) =>
