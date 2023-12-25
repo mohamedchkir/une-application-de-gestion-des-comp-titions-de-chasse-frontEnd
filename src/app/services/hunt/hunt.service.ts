@@ -7,12 +7,12 @@ import {HuntElement} from "../../hunt/models/hunt-element";
   providedIn: 'root'
 })
 export class HuntService {
-  private url: string = "http://localhost:8888/api/hunting";
+  private url: string = "http://localhost:8080/api/v1/hunting";
 
   constructor(private _http: HttpClient) { }
 
   getHuntingOfCompetition(code: string): Observable<HuntElement[]> {
-    return this._http.get<HuntElement[]>(this.url + `/competition/${code}`);
+    return this._http.get<HuntElement[]>(this.url + `/${code}`);
   }
 
   saveHunting(hunt: any): Observable<HuntElement>{

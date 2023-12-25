@@ -7,7 +7,8 @@ import {MatPaginator} from "@angular/material/paginator";
 import {LiveAnnouncer} from "@angular/cdk/a11y";
 import {MatSort, Sort} from "@angular/material/sort";
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
-import {BottomSheetComponent} from "../bottom-sheet/bottom-sheet.component";
+import {BottomSheetComponent} from "../dialog/bottom-sheet.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-table',
@@ -24,11 +25,20 @@ export class TableComponent implements OnInit, OnDestroy {
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private _competitionService: CompetitionService,
-              private _bottomSheet: MatBottomSheet,
+              private _bottomSheet: MatDialog,
               private _liveAnnouncer: LiveAnnouncer) {
   }
-
   ngOnInit(): void {
+    this.fetchCompetitions();
+    this._competitionService.competitionAdded.subscribe(() => {
+      this.fetchCompetitions();
+    });
+  }
+
+  handleCompetitionAdded(): void {
+    this.fetchCompetitions();
+  }
+  private fetchCompetitions(): void {
     this._sub = this._competitionService.getCompetitions().subscribe(
       data => {
         this.competitions = data.content;
@@ -37,8 +47,9 @@ export class TableComponent implements OnInit, OnDestroy {
         this.dataSource.sort = this.sort;
       },
       error => console.error(error)
-    )
+    );
   }
+
 
   ngOnDestroy(): void {
     this._sub.unsubscribe();
@@ -59,6 +70,7 @@ export class TableComponent implements OnInit, OnDestroy {
   filterData(selectedStatus: string): void {
     if (selectedStatus === "") {
       this.dataSource = new MatTableDataSource<CompetitionElement>(this.competitions);
+
     } else {
       this.dataSource = new MatTableDataSource<CompetitionElement>(this.competitions.filter(item => item.status === selectedStatus));
     }

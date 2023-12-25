@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {PageableResponse} from "../../competition/models/pageable-response";
@@ -12,10 +12,11 @@ import {RegisterElement} from "../../member/models/register-element";
 export class CompetitionService {
   private url: string = "http://localhost:8080/api/v1/competitions";
 
+  competitionAdded = new EventEmitter<void>();
   constructor(private _http: HttpClient) { }
 
   getCompetitions(): Observable<PageableResponse> {
-    return this._http.get<PageableResponse>(this.url + "?page=0&size=50");
+    return this._http.get<PageableResponse>(this.url + "?page=0&size=10");
   }
 
   getCompetition(code: string): Observable<CompetitionElement> {
@@ -27,6 +28,6 @@ export class CompetitionService {
   }
 
   calculateScore(code: string): Observable<RegisterElement[]>{
-    return this._http.get<RegisterElement[]>(this.url + `/score/${code}`);
+    return this._http.get<RegisterElement[]>(this.url + `/${code}/calculate-score`);
   }
 }

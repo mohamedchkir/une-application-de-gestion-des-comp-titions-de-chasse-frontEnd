@@ -9,7 +9,7 @@ import {MatSortModule} from "@angular/material/sort";
 import { TableComponent } from './components/table/table.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MatButtonModule} from "@angular/material/button";
-import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
+import { BottomSheetComponent } from './components/dialog/bottom-sheet.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatBottomSheetModule} from "@angular/material/bottom-sheet";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -17,6 +17,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatRadioModule} from "@angular/material/radio";
 import { PodiumComponent } from './components/podium/podium.component';
 import {MatCardModule} from "@angular/material/card";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -25,22 +27,24 @@ import {MatCardModule} from "@angular/material/card";
     BottomSheetComponent,
     PodiumComponent,
   ],
-    imports: [
-        CommonModule,
-        CompetitionRoutingModule,
-        HttpClientModule,
-        RouterOutlet,
-        MatTableModule,
-        MatPaginatorModule,
-        MatButtonModule,
-        MatSortModule,
-        MatBottomSheetModule,
-        MatFormFieldModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatInputModule,
-        MatRadioModule,
-        MatCardModule
-    ],
+  imports: [
+    CommonModule,
+    CompetitionRoutingModule,
+    HttpClientModule,
+    RouterOutlet,
+    MatTableModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    MatSortModule,
+    MatBottomSheetModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatRadioModule,
+    MatCardModule,
+    MatOptionModule,
+    MatSelectModule
+  ],
 })
 export class CompetitionModule { }

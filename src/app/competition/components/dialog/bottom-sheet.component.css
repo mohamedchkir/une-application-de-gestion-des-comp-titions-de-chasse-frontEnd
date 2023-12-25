@@ -1,0 +1,18 @@
+#form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 30px;
+}
+
+
+button , .amount-input {
+  grid-column: span 2; /* The button spans two columns */
+}
+
+/* Add this in your component's CSS or global styles */
+.snackbar-success {
+  background-color: #41d918;
+  color: #fff; /* White text color */
+}
+

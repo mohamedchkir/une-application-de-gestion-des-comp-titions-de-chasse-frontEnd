@@ -14,7 +14,7 @@ import {LiveAnnouncer} from "@angular/cdk/a11y";
 })
 export class TableComponent implements OnInit, OnDestroy{
   private _sub!: Subscription;
-  displayedColumns: string[] = ["code", "date", "start time", "end time", "location", "amount", "status"];
+  displayedColumns: string[] = ["code", "date", "start time", "end time", "location", "amount", "status","Number of Participants"];
   currentCompetition?: CompetitionElement;
   nextCompetition?: CompetitionElement;
   competitions: CompetitionElement[] = [];
