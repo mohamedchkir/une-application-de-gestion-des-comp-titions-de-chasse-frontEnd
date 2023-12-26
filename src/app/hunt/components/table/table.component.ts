@@ -14,7 +14,7 @@ import {LiveAnnouncer} from "@angular/cdk/a11y";
 })
 export class TableComponent implements OnInit, OnDestroy{
   private _sub!: Subscription;
-  displayedColumns: string[] = ["code", "date", "start time", "end time", "location", "amount", "status"];
+  displayedColumns: string[] = ["code", "date", "start time", "end time", "location", "amount", "status","Number of Participants"];
   currentCompetition?: CompetitionElement;
   nextCompetition?: CompetitionElement;
   competitions: CompetitionElement[] = [];
@@ -28,7 +28,7 @@ export class TableComponent implements OnInit, OnDestroy{
   ngOnInit(): void {
     this._sub = this._competitionService.getCompetitions().subscribe(
       data => {
-        this.competitions = data;
+        this.competitions = data.content;
         this.dataSource = new MatTableDataSource<CompetitionElement>(this.competitions.filter(value => value.status == "COMPLETED"));
         this.currentCompetition = this.competitions.find(value => value.status == "ONGOING");
         this.nextCompetition = this.competitions.filter(competition => competition.status === 'UPCOMING').sort((a, b) =>

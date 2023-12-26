@@ -6,9 +6,10 @@ import {MatSort, Sort} from "@angular/material/sort";
 import {MemberElement} from "../../models/member-element";
 import {LiveAnnouncer} from "@angular/cdk/a11y";
 import {MemberService} from "../../../services/member/member.service";
-import {BottomSheetMemberComponent} from "../bottom-sheet-member/bottom-sheet-member.component";
-import {MatBottomSheet} from "@angular/material/bottom-sheet";
+import {BottomSheetMemberComponent} from "../dialog-member/bottom-sheet-member.component";
 import {BottomSheetRegisterComponent} from "../bottom-sheet-register/bottom-sheet-register.component";
+import {MatDialog} from "@angular/material/dialog";
+import {MatBottomSheet} from "@angular/material/bottom-sheet";
 
 @Component({
   selector: 'app-table',
@@ -25,6 +26,7 @@ export class TableComponent implements OnInit, OnDestroy {
 
   constructor(private _memberService: MemberService,
               private _bottomSheet: MatBottomSheet,
+              private _Sheet: MatDialog,
               private _liveAnnouncer: LiveAnnouncer) {
   }
 
@@ -57,7 +59,7 @@ export class TableComponent implements OnInit, OnDestroy {
   }
 
   openMemberBottomSheet(): void {
-    this._bottomSheet.open(BottomSheetMemberComponent);
+    this._Sheet.open(BottomSheetMemberComponent);
   }
 
   openRegisterBottomSheet(): void {

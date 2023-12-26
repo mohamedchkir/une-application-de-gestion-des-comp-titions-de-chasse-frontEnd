@@ -7,7 +7,7 @@ import {FishElement} from "../../hunt/models/fish-element";
   providedIn: 'root'
 })
 export class FishService {
-  private url: string = "http://localhost:8888/api/fish";
+  private url: string = " http://localhost:8080/api/v1/fishes";
 
   constructor(private _http: HttpClient) { }
 

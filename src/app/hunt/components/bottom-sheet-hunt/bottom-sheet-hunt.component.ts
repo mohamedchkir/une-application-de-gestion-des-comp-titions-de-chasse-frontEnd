@@ -11,9 +11,9 @@ import {HuntService} from "../../../services/hunt/hunt.service";
 import {CompetitionElement} from "../../../competition/models/competition-element";
 
 @Component({
-  selector: 'app-bottom-sheet-hunt',
+  selector: 'app-dialog-hunt',
   templateUrl: './bottom-sheet-hunt.component.html',
-  styleUrl: './bottom-sheet-hunt.component.css'
+  styleUrl: './dialog-hunt.component.css'
 })
 export class BottomSheetHuntComponent {
   huntForm: FormGroup = new FormGroup<any>({});

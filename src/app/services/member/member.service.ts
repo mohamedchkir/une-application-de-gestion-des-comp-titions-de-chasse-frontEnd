@@ -8,8 +8,8 @@ import {RegisterElement} from "../../member/models/register-element";
   providedIn: 'root'
 })
 export class MemberService {
-  private url: string = "http://localhost:8888/api/member";
-  private url_register: string = "http://localhost:8888/api/register";
+  private url: string = " http://localhost:8080/api/v1/members";
+  private url_register: string = "http://localhost:8080/api/v1/rankings/register";
 
   constructor(private _http: HttpClient) { }
 

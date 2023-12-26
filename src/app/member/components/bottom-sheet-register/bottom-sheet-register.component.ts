@@ -8,11 +8,13 @@ import {CompetitionService} from "../../../services/competition/competition.serv
 import {CompetitionElement} from "../../../competition/models/competition-element";
 import {map, Observable, startWith} from "rxjs";
 import {MemberElement} from "../../models/member-element";
+import { MatSnackBar } from "@angular/material/snack-bar";
+
 
 @Component({
-  selector: 'app-bottom-sheet-register',
+  selector: 'app-dialog-register',
   templateUrl: './bottom-sheet-register.component.html',
-  styleUrl: './bottom-sheet-register.component.css'
+  styleUrl: './dialog-register.component.css'
 })
 export class BottomSheetRegisterComponent {
   registerForm: FormGroup = new FormGroup<any>({});
@@ -26,12 +28,13 @@ export class BottomSheetRegisterComponent {
   constructor(private _bottomSheetRef: MatBottomSheetRef<BottomSheetRegisterComponent>,
               private _memberService: MemberService,
               private _competitionService: CompetitionService,
-              private _fb: FormBuilder) {}
+              private _fb: FormBuilder,
+              private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this._competitionService.getCompetitions().subscribe(
       data => {
-        this.competitions = data.filter(value => value.status == "UPCOMING");
+        this.competitions = data.content.filter(value => value.status == "UPCOMING");
         this.filteredCompetitions = this.competitionControl.valueChanges.pipe(
           startWith(''),
           map(value => {
@@ -87,8 +90,19 @@ export class BottomSheetRegisterComponent {
     this._memberService.registerMember(register).subscribe(
       data => {
         this._bottomSheetRef.dismiss();
+        this.showSuccessSnackBar('Member added successfully!');
+
+
       },
       error => this.errorResponse = error.error
     )
+  }
+
+  private showSuccessSnackBar(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 3000, // Adjust the duration as needed
+      panelClass: ['snackbar-success'], // Optional CSS class for styling
+    });
+
   }
 }

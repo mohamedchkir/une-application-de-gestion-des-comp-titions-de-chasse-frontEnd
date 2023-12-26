@@ -9,6 +9,8 @@
 }
 
 .participant-header{
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
@@ -32,4 +34,17 @@ th, td {
 thead {
   background-color: #eee;
   font-weight: bold;
+}
+.pageHead {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+
+}
+h1{
+  display: flex;
+  justify-content: center;
+  color: #000000;
+  font-family: "Arabic Typesetting";
+  font-size: xxx-large;
 }
