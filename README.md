@@ -1,27 +1,43 @@
-# AftasFrontEnd
+## Aftas Club - Competition Management Application (Frontend)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.7.
+**Description:**
 
-## Development server
+This repository contains the frontend implementation of the Aftas Club Competition Management Application. It works in conjunction with the backend to provide a comprehensive solution for managing underwater hunting competitions organized by the Aftas Club.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Technologies:**
 
-## Code scaffolding
+* **Frontend:** Angular
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Project Setup:**
 
-## Build
+**1. Clone the repository:**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+git clone https://github.com/mohamedchkir/une-application-de-gestion-des-comp-titions-de-chasse-frontEnd.git
+```
 
-## Running unit tests
+**2. Navigate to the frontend directory:**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+cd une-application-de-gestion-des-comp-titions-de-chasse-frontEnd
+```
 
-## Running end-to-end tests
+**3. Install dependencies:**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+npm install
+```
 
-## Further help
+**4. Configure backend connection:**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Update the backend API URL in the frontend code, typically found in services or configuration files. Look for a configuration related to API endpoints and replace it with the URL where your backend is hosted (e.g., http://localhost:8080).
+
+**5. Run the application:**
+
+```bash
+ng serve -o
+```
+
+This command will compile the Angular application and open it in your default web browser. The application will be accessible at http://localhost:4200.
+
+**Note:** Ensure that the backend server is running and accessible at the specified URL.
