@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: "competition", component: CompetitionComponent, children: [
       {path: "result/:code", component: PodiumComponent, canActivate: [CompetitionGuard]},
-      {path: "table", component: TableComponent,canActivate: [authGuard, hasAuthorityGuard],data: {roles: ['MANAGER']}},
+      {path: "table", component: TableComponent,canActivate: [authGuard, hasAuthorityGuard],data: {roles: ['MANAGER','ADHERENT','JURY']}},
       {path: "", redirectTo: "table", pathMatch: "full"}
     ]
   },

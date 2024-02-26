@@ -1,8 +1,22 @@
-import { CanActivateFn } from '@angular/router';
-import {inject} from "@angular/core";
-import {AuthService} from "../services/auth/auth.service";
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { AuthService } from '../services/auth/auth.service';
 
-export const hasAuthorityGuard: CanActivateFn = (route, state) => {
-  const authService = inject(AuthService);
-  return authService.isHasAuthority(route.data['roles']);
-};
+@Injectable({
+  providedIn: 'root'
+})
+export class HasAuthorityGuard implements CanActivate {
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    const roles = route.data['roles'];
+
+    if (this.authService.isHasAuthority(roles)) {
+      return true;
+    } else {
+      this.router.navigate(['/forbidden']);
+      return false;
+    }
+  }
+}
