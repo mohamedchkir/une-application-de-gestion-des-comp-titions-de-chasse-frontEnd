@@ -10,7 +10,7 @@ import {MatDialogRef} from "@angular/material/dialog";
 @Component({
   selector: 'app-dialog-member',
   templateUrl: './bottom-sheet-member.component.html',
-  styleUrl: './dialog-member.component.css'
+  styleUrl: './bottom-sheet-member.component.css'
 })
 export class BottomSheetMemberComponent {
   memberForm!: FormGroup;

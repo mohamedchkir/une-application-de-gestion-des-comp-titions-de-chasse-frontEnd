@@ -9,7 +9,7 @@ import {MatDialogRef} from "@angular/material/dialog";
 @Component({
   selector: 'app-dialog',
   templateUrl: './bottom-sheet.component.html',
-  styleUrl: './dialog.component.css'
+  styleUrl: './bottom-sheet.component.css'
 })
 
 export class BottomSheetComponent implements OnInit {

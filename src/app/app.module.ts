@@ -9,6 +9,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {CompetitionModule} from "./competition/competition.module";
 import {MemberModule} from "./member/member.module";
 import {HuntModule} from "./hunt/hunt.module";
+import {authInterceptor} from "./interceptor/auth.interceptor";
+import {provideHttpClient, withInterceptors} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -24,6 +26,9 @@ import {HuntModule} from "./hunt/hunt.module";
     CompetitionModule,
     MemberModule,
     HuntModule
+  ],
+  providers: [
+    provideHttpClient(withInterceptors([authInterceptor]))
   ],
   bootstrap: [AppComponent]
 })

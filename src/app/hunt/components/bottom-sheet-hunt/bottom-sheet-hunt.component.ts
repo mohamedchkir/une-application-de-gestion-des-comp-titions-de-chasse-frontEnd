@@ -13,7 +13,7 @@ import {CompetitionElement} from "../../../competition/models/competition-elemen
 @Component({
   selector: 'app-dialog-hunt',
   templateUrl: './bottom-sheet-hunt.component.html',
-  styleUrl: './dialog-hunt.component.css'
+  styleUrl: './bottom-sheet-hunt.component.css'
 })
 export class BottomSheetHuntComponent {
   huntForm: FormGroup = new FormGroup<any>({});

@@ -14,7 +14,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 @Component({
   selector: 'app-dialog-register',
   templateUrl: './bottom-sheet-register.component.html',
-  styleUrl: './dialog-register.component.css'
+  styleUrl: './bottom-sheet-register.component.css'
 })
 export class BottomSheetRegisterComponent {
   registerForm: FormGroup = new FormGroup<any>({});
