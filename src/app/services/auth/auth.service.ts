@@ -23,8 +23,8 @@ export class AuthService {
     return this.http.post<AuthResponse>(this.loginUrl, {email, password});
   }
 
-  register(username: string, password: string ,firstName: string , lastName:string, role:string): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(this.registerUrl, {username, password,firstName, lastName,role});
+  register(email: string, password: string ,firstName: string , lastName:string, identityNumber:string,identityDocument:string): Observable<AuthResponse> {
+    return this.http.post<AuthResponse>(this.registerUrl, {email, password,firstName, lastName,identityNumber,identityDocument});
   }
 
   profile(): Observable<any> {
@@ -32,7 +32,9 @@ export class AuthService {
   }
 
   isHasAuthority(roles: string[]): Observable<boolean> {
+    console.log(!this.user)
     if (!this.user){
+      console.log('fetching user')
       return this.profile().pipe(
         tap(data => this.user = data),
         map(data => roles.includes(data['role']))

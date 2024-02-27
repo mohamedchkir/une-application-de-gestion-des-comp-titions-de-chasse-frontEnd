@@ -1,1 +1,47 @@
-<p>register works!</p>
+<div class="wrapper">
+  <div class="header">
+    <div class="top">
+      <div class="logo">
+        <img src="./assets/images/sign-up-form.png" alt="instagram" style="width: 175px;">
+      </div>
+      <div class="form">
+        <div class="input_field">
+          <input type="text" placeholder="firstName" class="input" [(ngModel)]="firstName">
+        </div>
+        <div class="input_field">
+          <input type="text" placeholder="lastName" class="input" [(ngModel)]="lastName">
+        </div>
+        <div class="input_field">
+          <input type="text" placeholder="Username or email" class="input" [(ngModel)]="email">
+        </div>
+        <div class="input_field">
+          <select class="input" [(ngModel)]="identityDocument">
+
+            <option value="CIN" selected>CIN</option>
+            <option value="CARTE_RESIDENCE">CARTE_RESIDENCE</option>
+            <option value="PASSPORT">PASSPORT</option>
+          </select>
+        </div>
+        <div class="input_field">
+          <input type="text" placeholder="Identity Number" class="input" [(ngModel)]="identityNumber">
+        </div>
+        <div class="input_field">
+          <input type="password" placeholder="Password" class="input" [(ngModel)]="password">
+        </div>
+        <div class="btn" (click)="onSubmit()">Sign In</div>
+      </div>
+
+      <div class="dif">
+        <div class="forgot">
+          <p>Don't have an account? <a href="/login">Log In</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer">
+
+  </div>
+</div>
+
+
