@@ -24,4 +24,8 @@ export class MemberService {
   registerMember(register: RegisterElement): Observable<RegisterElement> {
     return this._http.post<RegisterElement>(this.url_register, register);
   }
+
+  updateMember(member: MemberElement): Observable<MemberElement> {
+    return this._http.put<MemberElement>(this.url, member);
+  }
 }
