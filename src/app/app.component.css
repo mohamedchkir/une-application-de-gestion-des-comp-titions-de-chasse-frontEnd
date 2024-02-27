@@ -2,8 +2,16 @@
   width: 100vw;
   height: 100vh;
 }
+.mat-drawer-inner-container.ng-tns-c2384444419-0 {
+
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
 .draw{
   background-color: #3f51b5;
+
 }
 
 #main-content {
@@ -32,6 +40,12 @@
   margin: 10px;
   color:#3f51b5;
 }
+#side-logout > a {
+  width: 100%;
+  margin: 10px;
+  margin-top: 2px;
+  color:#3f51b5;
+}
 
 
 .navigation-header {
@@ -44,9 +58,7 @@
 }
 nav {
   width: 100%;
-  display: flex;
   padding-left: 2%;
-  justify-content: space-between;
   align-items: center;
   background-color: #a9a5c6;
 }
@@ -71,96 +83,42 @@ nav {
   color: white;
 }
 
+
 /* CSS */
-.button-49,
-.button-49:after {
-  width: 113px;
-  height: 48px;
-  line-height: 57px;
-  font-size: 20px;
-  font-family: 'Bebas Neue', sans-serif;
-  background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
-  border: 0;
-  color: #fff;
-  letter-spacing: 3px;
-  box-shadow: 6px 0px 0px #00E6F6;
-  outline: transparent;
-  position: relative;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  text-align: center;
+.button-38 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+background-color: #FFFFFF;
+border: 0;
+border-radius: .5rem;
+box-sizing: border-box;
+color: #111827;
+font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+font-size: .875rem;
+font-weight: 600;
+line-height: 1.25rem;
+padding: .75rem 1rem;
+text-align: center;
+text-decoration: none #D1D5DB solid;
+text-decoration-thickness: auto;
+box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+cursor: pointer;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
 }
 
-.button-49:after {
-  --slice-0: inset(50% 50% 50% 50%);
-  --slice-1: inset(80% -6px 0 0);
-  --slice-2: inset(50% -6px 30% 0);
-  --slice-3: inset(10% -6px 85% 0);
-  --slice-4: inset(40% -6px 43% 0);
-  --slice-5: inset(80% -6px 5% 0);
-
-  content: 'ALTERNATE TEXT';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
-  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
-  clip-path: var(--slice-0);
+.button-38:hover {
+  background-color: rgb(249,250,251);
 }
 
-.button-49:hover:after {
-  animation: 1s glitch;
-  animation-timing-function: steps(2, end);
+.button-38:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
-@keyframes glitch {
-  0% {
-    clip-path: var(--slice-1);
-    transform: translate(-20px, -10px);
-  }
-  10% {
-    clip-path: var(--slice-3);
-    transform: translate(10px, 10px);
-  }
-  20% {
-    clip-path: var(--slice-1);
-    transform: translate(-10px, 10px);
-  }
-  30% {
-    clip-path: var(--slice-3);
-    transform: translate(0px, 5px);
-  }
-  40% {
-    clip-path: var(--slice-2);
-    transform: translate(-5px, 0px);
-  }
-  50% {
-    clip-path: var(--slice-3);
-    transform: translate(5px, 0px);
-  }
-  60% {
-    clip-path: var(--slice-4);
-    transform: translate(5px, 10px);
-  }
-  70% {
-    clip-path: var(--slice-2);
-    transform: translate(-10px, 10px);
-  }
-  80% {
-    clip-path: var(--slice-5);
-    transform: translate(20px, -10px);
-  }
-  90% {
-    clip-path: var(--slice-1);
-    transform: translate(-10px, 0px);
-  }
-  100% {
-    clip-path: var(--slice-1);
-    transform: translate(0);
-  }
+.button-38:focus-visible {
+  box-shadow: none;
 }
-

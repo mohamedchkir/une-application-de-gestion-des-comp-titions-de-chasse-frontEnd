@@ -1,8 +1,9 @@
 export interface MemberElement {
   num: number;
-  name: string;
-  familyName: string;
-  accessionDate: string;
+  firstName: number;
+  LastName: string;
+  email: string;
+  password: string;
   nationality: string;
   identityNumber: string;
   identityDocument: string;

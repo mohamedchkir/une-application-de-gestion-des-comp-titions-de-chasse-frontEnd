@@ -1,23 +1,30 @@
 <form id="form" [formGroup]="memberForm" (ngSubmit)="saveMember()">
   <mat-form-field>
-    <mat-label>Num</mat-label>
-    <input type="number" matInput formControlName="num">
-    <div *ngIf="errorResponse?.errors?.['num']">
-      <mat-error>{{ errorResponse?.errors?.['num'] }}</mat-error>
+    <mat-label>Email</mat-label>
+    <input type="email" matInput formControlName="email">
+    <div *ngIf="errorResponse?.errors?.['email']">
+      <mat-error>{{ errorResponse?.errors?.['email'] }}</mat-error>
     </div>
   </mat-form-field>
   <mat-form-field>
-    <mat-label>Name</mat-label>
-    <input matInput formControlName="name">
-    <div *ngIf="errorResponse?.errors?.['name']">
-      <mat-error>{{ errorResponse?.errors?.['name'] }}</mat-error>
+    <mat-label>Password</mat-label>
+    <input type="password" matInput formControlName="password">
+    <div *ngIf="errorResponse?.errors?.['password']">
+      <mat-error>{{ errorResponse?.errors?.['password'] }}</mat-error>
     </div>
   </mat-form-field>
   <mat-form-field>
-    <mat-label>Family Name</mat-label>
-    <input matInput formControlName="familyName">
-    <div *ngIf="errorResponse?.errors?.['familyName']">
-      <mat-error>{{ errorResponse?.errors?.['familyName'] }}</mat-error>
+    <mat-label>First Name</mat-label>
+    <input matInput formControlName="firstName">
+    <div *ngIf="errorResponse?.errors?.['firstName']">
+      <mat-error>{{ errorResponse?.errors?.['firstName'] }}</mat-error>
+    </div>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Last Name</mat-label>
+    <input matInput formControlName="lastName">
+    <div *ngIf="errorResponse?.errors?.['lastName']">
+      <mat-error>{{ errorResponse?.errors?.['lastName'] }}</mat-error>
     </div>
   </mat-form-field>
   <mat-form-field>

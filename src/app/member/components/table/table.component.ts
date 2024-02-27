@@ -10,6 +10,7 @@ import {BottomSheetMemberComponent} from "../dialog-member/bottom-sheet-member.c
 import {BottomSheetRegisterComponent} from "../bottom-sheet-register/bottom-sheet-register.component";
 import {MatDialog} from "@angular/material/dialog";
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
+import {UpdateUserBottomSheetsComponent} from "../update-user-bottom-sheets/update-user-bottom-sheets.component";
 
 @Component({
   selector: 'app-table',
@@ -18,7 +19,7 @@ import {MatBottomSheet} from "@angular/material/bottom-sheet";
 })
 export class TableComponent implements OnInit, OnDestroy {
   private _sub!: Subscription;
-  displayedColumns: string[] = ["num", "name", "family name", "accession date", "nationality", "identity number", "identity document"];
+  displayedColumns: string[] = ["num", "first Name", "last name", "accession date", "nationality", "identity number", "identity document", "actions"];
   members: MemberElement[] = [];
   dataSource = new MatTableDataSource<MemberElement>(this.members);
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -64,5 +65,11 @@ export class TableComponent implements OnInit, OnDestroy {
 
   openRegisterBottomSheet(): void {
     this._bottomSheet.open(BottomSheetRegisterComponent);
+  }
+
+  openUpdateMemberBottomSheet(member: MemberElement): void {
+    this._bottomSheet.open(UpdateUserBottomSheetsComponent, {
+      data: {user: member}
+    });
   }
 }

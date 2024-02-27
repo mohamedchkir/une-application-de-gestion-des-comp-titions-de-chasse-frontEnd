@@ -22,9 +22,10 @@ export class BottomSheetMemberComponent {
 
   ngOnInit(): void {
     this.memberForm = this._fb.group({
-      num: [''],
-      name: [''],
-      familyName: [''],
+      email: [''],
+      password: [''],
+      firstName: [''],
+      lastName: [''],
       nationality: [''],
       identityNumber: [''],
       identityDocument: [''],

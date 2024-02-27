@@ -6,6 +6,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {StandardApiResponse} from "../../../models/standard-api-response";
 import {MAT_BOTTOM_SHEET_DATA, MatBottomSheetRef} from "@angular/material/bottom-sheet";
 import {MemberService} from "../../../services/member/member.service";
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-update-user-bottom-sheets',
@@ -14,7 +15,9 @@ import {MemberService} from "../../../services/member/member.service";
     ReactiveFormsModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    NgForOf,
+    NgIf
   ],
   templateUrl: './update-user-bottom-sheets.component.html',
   styleUrl: './update-user-bottom-sheets.component.css'
@@ -24,9 +27,9 @@ export class UpdateUserBottomSheetsComponent {
   errorResponse?: StandardApiResponse;
 
   roles: any[] = [
-    {id: 1, name: 'Manager'},
-    {id: 2, name: 'Jury'},
-    {id: 3, name: 'Adherent'}
+    'MANAGER',
+    'JURY',
+    'ADHERENT'
   ];
 
   constructor(private _bottomSheetRef: MatBottomSheetRef<UpdateUserBottomSheetsComponent>,
